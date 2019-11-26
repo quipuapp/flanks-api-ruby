@@ -1,0 +1,7 @@
+{
+  "access_token": "aPscYAeKMbvLpWYgNYvtHUtsMOHxMT",
+  "expires_in": 36000,
+  "token_type": "Bearer",
+  "scope": "read write aggregation payment",
+  "refresh_token": "VwkqYDisjvIWNKJGjbFuOcyEacQchT"
+}
