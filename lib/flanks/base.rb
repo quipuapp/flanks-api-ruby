@@ -18,16 +18,15 @@ module Flanks
     def api_call(method:, path:, params: {}, token: nil)
       url = Flanks.const_get(:BASE_URL) + path
 
-      headers = if token.nil?
-                  { 'Content-Type' => 'application/json' }
-                else
-                  # TODO
-                end
+      headers = { 'Content-Type' => 'application/json' }
 
       if method == :post
         payload = params.to_json
       else
-        headers.merge!(params: params)
+        headers.merge!(
+          Authorization: "Bearer #{token}",
+          params: params
+        )
       end
 
       request_params = {
