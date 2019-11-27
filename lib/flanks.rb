@@ -3,6 +3,8 @@ require 'flanks/configuration'
 require 'flanks/base'
 require 'flanks/error'
 require 'flanks/resource'
+require 'flanks/collection'
 
 require 'flanks/resources/account'
+require 'flanks/resources/bank'
 require 'flanks/resources/token'
