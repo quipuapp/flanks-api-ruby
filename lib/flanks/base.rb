@@ -25,10 +25,11 @@ module Flanks
       if method == :post
         payload = params.to_json
       else
-        headers.merge!(
-          Authorization: "Bearer #{token}",
-          params: params
-        )
+        headers.merge!(params: params)
+      end
+
+      unless token.nil?
+        headers.merge!(Authorization: "Bearer #{token}")
       end
 
       log_request(method, url, headers, params)

@@ -7,12 +7,13 @@ describe Flanks::Account do
 
   describe "#get" do
     before do
-      stub_request(:get, "https://api.flanks.io/v0/bank/credentials/account?credentials_token=THE_TOKCREDENTIALS").
+      stub_request(:post, "https://api.flanks.io/v0/bank/credentials/account").
         with(
           headers: {
             'Content-Type' => 'application/json',
             'Authorization' => 'Bearer THIS_IS_EL_BUEN_TOKEN'
-          }
+          },
+          body: "{\"credentials_token\":\"THE_TOKCREDENTIALS\"}"
         ).
         to_return(status: 200, body: response_json(resource: 'account', action: 'get'))
     end

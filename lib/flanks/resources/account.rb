@@ -7,7 +7,7 @@ module Flanks
 
     def self.get(token:, credentials_token:)
       response = Flanks.api_call(
-        method: :get,
+        method: :post,
         path: RESOURCE_PATH,
         token: token,
         params: {
