@@ -216,7 +216,7 @@ describe Flanks do
         end
 
         it "does not call the logger" do
-          expect(Flanks.configuration.logger).not_to receive(:info)
+          expect_any_instance_of(Logger).not_to receive(:info)
 
           subject.log_message("cucamonga")
         end
