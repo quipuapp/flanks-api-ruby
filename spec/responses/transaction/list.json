@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "T1230045",
+    "account_id": "A91515",
+    "amount": -12.34,
+    "balance": 913.33,
+    "entity": "whatthebank",
+    "cardNumber": "abc",
+    "category": "Sport",
+    "currency": "EUR",
+    "operationDate": "2019-10-11",
+    "valueDate": "2019-10-12",
+    "description": "A description",
+    "productDescription": "A product description",
+    "transfer": {
+      "beneficiary": "John Benefits",
+      "ibanBeneficiary": "ES5700752532614289557739",
+      "ibanPayer": "ES5904877762281252243113",
+      "payer": "Max Payer"
+    }
+  },
+  {
+    "_id": "T1230046",
+    "account_id": "A91515",
+    "amount": 3.11,
+    "balance": 916.44,
+    "entity": "whatthebank",
+    "cardNumber": "def",
+    "category": "Leisure",
+    "currency": "EUR",
+    "operationDate": "2019-10-13",
+    "valueDate": "2019-10-14",
+    "description": "Another description",
+    "productDescription": "Another product description",
+    "transfer": {
+      "beneficiary": "Max Payer",
+      "ibanBeneficiary": "ES5904877762281252243113",
+      "ibanPayer": "ES2731905381475958758479",
+      "payer": "The Dude"
+    }
+  },
+  {
+    "_id": "T1230047",
+    "account_id": "A91515",
+    "amount": 4.99,
+    "balance": 921.43,
+    "entity": "whatthebank",
+    "cardNumber": "ghi",
+    "category": "Finance",
+    "currency": "EUR",
+    "operationDate": "2019-10-15",
+    "valueDate": "2019-10-16",
+    "description": "The final description",
+    "productDescription": "The final product description",
+    "transfer": {
+      "beneficiary": "Max Payer",
+      "ibanBeneficiary": "ES5904877762281252243113",
+      "ibanPayer": "ES6801287657415495297851",
+      "payer": "Random Guy"
+    }
+  }
+]
