@@ -7,4 +7,5 @@ require 'flanks/collection'
 
 require 'flanks/resources/account'
 require 'flanks/resources/bank'
+require 'flanks/resources/link'
 require 'flanks/resources/token'
