@@ -1,0 +1,55 @@
+module Flanks
+  class Collection < Array
+    def initialize(response, item_class, token = nil)
+      @item_class = item_class
+      @token = token
+      populate!(response, item_class)
+    end
+
+    def next_page?
+      !@next_page_uri.nil?
+    end
+
+    def previous_page?
+      !@previous_page_uri.nil?
+    end
+
+    def next_page!
+      return unless next_page?
+
+      uri = URI.parse(@next_page_uri)
+      params = if uri.query
+                 Hash[URI::decode_www_form(uri.query)]
+               else
+                 {}
+               end
+
+      response = Bankin.api_call(:get, uri.path, params, @token)
+      populate!(response, @item_class)
+      self
+    end
+
+    def load_all!
+      while next_page? do
+        next_page!
+      end
+      self
+    end
+
+    private
+
+    def populate!(response, item_klass)
+      response.each do |item|
+        self << item_klass.new(item, @token)
+      end
+
+      # TODO review
+      # set_pagination(response['pagination'])
+    end
+
+    def set_pagination(pagination_data)
+      @next_page_uri = pagination_data['next_uri']
+      @previous_page_uri = pagination_data['previous_uri']
+    end
+  end
+end

@@ -1,0 +1,30 @@
+[
+  {
+    "iban": "ES4501822763517295596839",
+    "entity": "whatthebank",
+    "alias": "Cuenta Random de Ahorros",
+    "balance": 1034.19,
+    "currency": "EUR",
+    "description": "La boena descrepsión",
+    "isOwner": true,
+    "numOwners": 3,
+    "owners": [
+      "Juanita admin", "Pepito colaborador", "Florencia gestora"
+    ],
+    "_id": "abc12340a0011234fda"
+  },
+  {
+    "iban": "ES8620956428346945419764",
+    "entity": "whatthebank",
+    "alias": "Cuenta Random de Inversiones",
+    "balance": 180291.55,
+    "currency": "EUR",
+    "description": "Long term money",
+    "isOwner": true,
+    "numOwners": 1,
+    "owners": [
+      "Juanita admin"
+    ],
+    "_id": "def78940a0011234fda"
+  }
+]

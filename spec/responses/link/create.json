@@ -1,0 +1,8 @@
+{
+  "message": "Successfully retrieved",
+  "credentials_token": "THE_CREDENTIALS_TOKEN_FOR_YOU",
+  "extra": {
+    "a_key": "a_content",
+    "b_key": "b_content"
+  }
+}
