@@ -22,24 +22,20 @@ module Flanks
 
       headers = { 'Content-Type' => 'application/json' }
 
-      if method == :post
-        payload = params.to_json
-      else
-        headers.merge!(params: params)
-      end
-
       unless token.nil?
         headers.merge!(Authorization: "Bearer #{token}")
       end
 
       log_request(method, url, headers, params)
 
-      request_params = {
-        method: method,
-        url: url,
-        headers: headers,
-        payload: payload
-      }
+      if method == :post
+        payload = params.to_json
+      else
+        headers.merge!(params: params)
+      end
+
+      request_params = { method: method, url: url, headers: headers }
+      request_params.merge!(payload: payload) unless payload.nil?
 
       begin
         response = RestClient::Request.execute(request_params)
@@ -59,8 +55,6 @@ module Flanks
 
       log_message("* Headers")
       headers.each do |key, value|
-        next if key == :params
-
         safe_value = if SENSIBLE_HEADERS.include?(key.to_s)
                        "<masked>"
                      else

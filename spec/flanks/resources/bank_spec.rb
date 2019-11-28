@@ -1,9 +1,7 @@
 require "spec_helper"
 
 describe Flanks::Bank do
-  before do
-    configure_flanks
-  end
+  before { configure_flanks }
 
   describe "#list" do
     before do

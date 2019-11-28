@@ -1,9 +1,7 @@
 require "spec_helper"
 
 describe Flanks::Link do
-  before do
-    configure_flanks
-  end
+  before { configure_flanks }
 
   describe "#create" do
     before do

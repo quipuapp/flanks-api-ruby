@@ -1,9 +1,7 @@
 require "spec_helper"
 
 describe Flanks::Account do
-  before do
-    configure_flanks
-  end
+  before { configure_flanks }
 
   describe "#get" do
     before do

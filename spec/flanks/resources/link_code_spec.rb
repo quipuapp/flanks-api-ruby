@@ -1,9 +1,7 @@
 require "spec_helper"
 
 describe Flanks::LinkCode do
-  before do
-    configure_flanks
-  end
+  before { configure_flanks }
 
   describe "#pending" do
     before do
