@@ -4,7 +4,7 @@ require 'json'
 module Flanks
   BASE_URL = 'https://api.flanks.io'
   SENSIBLE_HEADERS = %w{Authorization}
-  SENSIBLE_PARAMS = %w{client_secret password credentials_token}
+  SENSIBLE_PARAMS = %w{client_secret password credentials_token code}
 
   class << self
     attr_accessor :configuration
