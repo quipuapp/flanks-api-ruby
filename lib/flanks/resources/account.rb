@@ -5,7 +5,7 @@ module Flanks
     has_fields :iban, :entity, :alias, :balance, :currency, :description,
                :isOwner, :numOwners, :owners, :_id
 
-    def self.get(token:, credentials_token:)
+    def self.list(token:, credentials_token:)
       response = Flanks.api_call(
         method: :post,
         path: RESOURCE_PATH,
@@ -14,7 +14,7 @@ module Flanks
           credentials_token: credentials_token
         }
       )
-      new(response)
+      Collection.new(response, self)
     end
   end
 end
